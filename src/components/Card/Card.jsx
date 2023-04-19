@@ -1,12 +1,12 @@
 import styles from "./Card.module.css";
 
 export default function Card(props) {
-  const { name, status, species, gender, origin, image, onClose } = props;
+  const { id,name, status, species, gender, origin, image, onClose } = props;
   return (
     <div className={styles.divCardContainer}>
       <div className={styles.divCardContent}>
         {/* <button onClick={onClose}>X</button> */}
-        <div onClick={onClose} className={styles.containerSpin}>
+        <div onClick={() => onClose(id)} className={styles.containerSpin}>
          <div className={styles.closeIconSpin}></div>
         </div>
         <h2>{name}</h2>
