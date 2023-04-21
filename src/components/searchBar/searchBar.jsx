@@ -15,14 +15,16 @@ export default function SearchBar(props) {
   };
 
   return (
-    <div className={styles.searchBarContainer}>
+    <div className={styles.formGroup}>
       <input
+        className={styles.formField}
         type="search"
-        placeholder="Search..."
+        placeholder="Search.."
         value={id}
         onChange={handleChange}
       />
-      <button onClick={handleClick} className={styles.button}>
+      <label for="id" className={styles.formLabel}>Search ID</label>
+      <button onClick={handleClick} className={styles.glowOnHover}>
         Agregar
       </button>
     </div>

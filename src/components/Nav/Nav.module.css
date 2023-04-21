@@ -1,9 +1,11 @@
 .NavContent{
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .glowOnHover {
+    margin-top: 15px;
     width: 220px;
     height: 50px;
     border: none;

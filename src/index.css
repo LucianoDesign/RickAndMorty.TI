@@ -5,6 +5,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  background-image: url('./imgs/background-rick-morty.jpg');
+  background-size: auto;
+  height: 100%vw; 
+  width: 100%vw; 
+  background-repeat: repeat;
+ 
 }
 
 code {
