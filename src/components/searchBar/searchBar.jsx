@@ -23,7 +23,7 @@ export default function SearchBar(props) {
         value={id}
         onChange={handleChange}
       />
-      <label for="id" className={styles.formLabel}>Search ID</label>
+      <label  className={styles.formLabel}>Search ID</label>
       <button onClick={handleClick} className={styles.glowOnHover}>
         Agregar
       </button>

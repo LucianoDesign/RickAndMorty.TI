@@ -7,7 +7,8 @@
         display: flex;
         position: relative;
         padding: 15px 0 0;
-        width: 15%;
+        width: 20%;
+        
       }
       
       .formField {
@@ -66,7 +67,7 @@
       }
 
 .glowOnHover {
-        
+        margin-right: 3em;
         width: 220px;
         height: 50px;
         border: none;
