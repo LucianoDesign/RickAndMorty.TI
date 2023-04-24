@@ -1,10 +1,11 @@
 import "./App.css";
 import { useState } from "react";
-import {Routes, Route} from "react-router-dom";
+import {Routes, Route, useLocation} from "react-router-dom";
 import Cards from "./components/Cards/Cards.jsx";
 import Nav from "./components/Nav/Nav";
 import About from "./components/About/About";
 import Detail from "./components/Detail/Detail";
+import Form from "./components/Form/Form";
 import axios from "axios";
 
 function App() {
@@ -35,11 +36,16 @@ function App() {
     );
     setCharacters(filteredCharacters);
   };
+  const location = useLocation();
+  const isForm = location.pathname === '/';
 
   return (
+
     <div className="App">
-      <Nav />
+
+      {!isForm && <Nav />}
       <Routes>
+      <Route path="/" element={<Form/>}/>
       <Route path="/about" element={<About />}/>
       <Route path="/home" element={<Cards characters={characters} onClose={onClose} onSearch={onSearch}/>}/>
       <Route path="/home/detail/:id" element={<Detail />} />
