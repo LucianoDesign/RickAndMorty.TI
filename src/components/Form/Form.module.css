@@ -9,8 +9,16 @@
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
+    
   }
   
+  .loginBox span{
+    margin-left:20px;
+    font-weight: bold;
+    color: rgb(154, 24, 24);
+    
+    
+  }
   .loginBox h2 {
     margin: 0 0 30px;
     padding: 0;
@@ -52,21 +60,21 @@
     font-size: 12px;
   }
   
-  .loginBox form a {
+  .loginBox form button {
+    cursor: pointer;
     position: relative;
     display: inline-block;
-    padding: 10px 20px;
-    color: #03e9f4;
+    padding: 10px 30px;
+    background-color: #03e9f4;
     font-size: 16px;
-    text-decoration: none;
-    text-transform: uppercase;
     overflow: hidden;
     transition: .5s;
     margin-top: 40px;
     letter-spacing: 4px
+    
   }
   
-  .loginBox a:hover {
+  .loginBox button:hover {
     background: #03e9f4;
     color: #fff;
     border-radius: 5px;
@@ -76,12 +84,12 @@
                 0 0 100px #03e9f4;
   }
   
-  .loginBox a span {
+  .loginBox button span {
     position: absolute;
     display: block;
   }
   
-  .loginBox a span:nth-child(1) {
+  .loginBox button span:nth-child(1) {
     top: 0;
     left: -100%;
     width: 100%;
@@ -99,7 +107,7 @@
     }
   }
   
-  .loginBox a span:nth-child(2) {
+  .loginBox button span:nth-child(2) {
     top: -100%;
     right: 0;
     width: 2px;
@@ -118,7 +126,7 @@
     }
   }
   
-  .loginBox a span:nth-child(3) {
+  .loginBox button span:nth-child(3) {
     bottom: 0;
     right: -100%;
     width: 100%;
@@ -137,7 +145,7 @@
     }
   }
   
-  .loginBox a span:nth-child(4) {
+  .loginBox button span:nth-child(4) {
     bottom: -100%;
     left: 0;
     width: 2px;

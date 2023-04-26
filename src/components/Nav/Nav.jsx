@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 export default function Nav(props) {
   
-
+const {logout} = props
  
 
   return (
@@ -16,6 +16,7 @@ export default function Nav(props) {
       <NavLink to={"/about"}>
         <button className={styles.glowOnHover}>About</button>
       </NavLink>
+      <button className={styles.glowOnHover} onClick={logout}>Log Out</button>
     </div>
   );
 }

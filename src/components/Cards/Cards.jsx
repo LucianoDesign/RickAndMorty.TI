@@ -6,8 +6,12 @@ import styles from "./Cards.module.css";
 export default function Cards(props) {
    const { characters, onClose , onSearch} = props;
    const handleClick = () => {
-    let randomNumber = Math.round(Math.random() * 825) + 1;
-    onSearch(randomNumber);
+    let randomNumber;
+  const usedNumbers = characters.map(char => char.id); // Obtener la lista de IDs ya usados
+  do {
+    randomNumber = Math.round(Math.random() * 825) + 1;
+  } while (usedNumbers.includes(randomNumber)); // Generar otro número si ya está en la lista
+  onSearch(randomNumber);
   };
    return (
    <div>
