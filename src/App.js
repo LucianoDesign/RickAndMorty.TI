@@ -1,4 +1,5 @@
 import "./App.css";
+import "../src/helpers/Routes.helper";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -9,6 +10,7 @@ import About from "./components/About/About";
 import Detail from "./components/Detail/Detail";
 import Form from "./components/Form/Form";
 import axios from "axios";
+import PathRoutes from "../src/helpers/Routes.helper";
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -67,9 +69,9 @@ function App() {
       {!isForm && <Nav logout = {logout}/>}
       <Routes>
       <Route path="/" element={<Form login = {login}/>}/>
-      <Route path="/about" element={<About />}/>
-      <Route path="/home" element={<Cards characters={characters} onClose={onClose} onSearch={onSearch}/>}/>
-      <Route path="/home/detail/:id" element={<Detail />} />
+      <Route path={PathRoutes.ABOUT} element={<About />}/>
+      <Route path={PathRoutes.HOME} element={<Cards characters={characters} onClose={onClose} onSearch={onSearch}/>}/>
+      <Route path={PathRoutes.DETAIL} element={<Detail />} />
       </Routes>
     </div>
   );

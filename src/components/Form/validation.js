@@ -1,8 +1,10 @@
 
 export const validateEmail = (email) => {
     if (!email) return "Email vacio";
-    if (!/\S+@\S+\.\S+/.test(email)) return "El usuario tiene que ser un email";
-    if (email.length > 35) return "Exceso de caracteres";
+    if (email.length > 35) {
+      return "Exceso de caracteres";}
+    else if (!/\S+@\S+\.\S+/.test(email)) return "El usuario tiene que ser un email";
+    
     return "";
   };
 
