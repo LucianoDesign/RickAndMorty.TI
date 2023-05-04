@@ -16,6 +16,9 @@ const {logout} = props
       <NavLink to={"/about"}>
         <button className={styles.glowOnHover}>About</button>
       </NavLink>
+      <NavLink to={"/favorites"}>
+        <button className={styles.glowOnHover}>Favorites</button>
+      </NavLink>
       <button className={styles.glowOnHover} onClick={logout}>Log Out</button>
     </div>
   );

@@ -9,6 +9,9 @@ export const validateEmail = (email) => {
   };
 
 export const validatePassword = (password) => {
-    if (!/^(?=.*\d)/.test(password)) return "Debe tener al menos un numero";
+    if (password.length < 6 || password.length > 10){
+      return "Debe tener entre 6 y 10 caracteres"
+    }
+    else if (!/^(?=.*\d)/.test(password)) return "Debe tener al menos un numero";
     return "";
   };
