@@ -1,6 +1,6 @@
 import styles from "./Card.module.css";
 import { Link } from "react-router-dom";
-import { addFav, removeFav } from "../../redux/actions";
+import { addFav, removeFav, removeAll } from "../../redux/actions";
 import { useState, useEffect } from "react";
 import {connect} from 'react-redux';
 
@@ -39,6 +39,10 @@ export  function Card(props) {
       addFav(props);
     }
   };
+  const handleClose = (id) => {
+    onClose(id);
+    removeFav(id);
+  };
   return (
     <div className={styles.divCardContainer}>
       <div className={styles.divCardContent}>
@@ -48,7 +52,7 @@ export  function Card(props) {
         ) : (
           <button onClick={handleFavorite}>🤍</button>
         )}
-        <div onClick={() => onClose(id)} className={styles.containerSpin}>
+        <div onClick={() => handleClose(id)} className={styles.containerSpin}>
           <div className={styles.closeIconSpin}></div>
         </div>
         <Link to={`detail/${id}`} className={styles.link}>

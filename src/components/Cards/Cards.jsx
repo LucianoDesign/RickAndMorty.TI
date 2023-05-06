@@ -1,12 +1,10 @@
-import { connect } from "react-redux";
 import Card from '../Card/Card';
 import SearchBar from "../SearchBar/SearchBar";
 import styles from "./Cards.module.css";
-import { removeFav } from "../../redux/actions";
 
 
-export function Cards(props) {
-   const { characters, onClose , onSearch, myFavourites, removeFav} = props;
+export default function Cards(props) {
+   const { characters, onClose , onSearch} = props;
    const handleClick = () => {
     let randomNumber;
   const usedNumbers = characters.map(char => char.id); // Obtener la lista de IDs ya usados
@@ -34,25 +32,8 @@ export function Cards(props) {
           origin={character.origin.name}
           image={character.image}
           onClose={onClose}
-          myFavourites={myFavourites}
-          removeFav={removeFav}
         />
       ))}
    </div>
    );
 }
-function mapStateToProps(state) {
-  return {
-    myFavourites: state.myFavourites,
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    removeFav: (id) => {
-      dispatch(removeFav(id));
-    },
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Cards);

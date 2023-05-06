@@ -3,6 +3,7 @@ import "../src/helpers/Routes.helper";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
 import {Routes, Route, useLocation} from "react-router-dom";
 import axios from "axios";
 import PathRoutes from "../src/helpers/Routes.helper";
@@ -13,6 +14,7 @@ import About from "./components/About/About";
 import Detail from "./components/Detail/Detail";
 import Form from "./components/Form/Form";
 import Favorites from "./components/Favorites/Favorites";
+
 
 function App() {
   const [characters, setCharacters] = useState([]);
