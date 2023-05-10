@@ -1,3 +1,27 @@
+.optionFilters {
+        display: flex;
+        margin-top: 120px;
+        align-items: center;
+                justify-content: space-around;
+  
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+}
+.optionFilters select {
+        width: 150px;
+        height: 30px;
+        border: none;
+        background-color: #eee;
+        border-radius: 5px;
+      }
+
 .favoriteDiv {
-    background-color: blue;
+    
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+        justify-content: center;
+        margin-top: 40px;
+  
 }

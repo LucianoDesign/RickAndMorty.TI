@@ -4,6 +4,7 @@ import styles from "./Favorites.module.css";
 import Card from "../Card/Card";
 import { filterCards, orderCards } from "../../redux/actions";
 
+
 export const Favorites = (props) => {
   const { myFavourites } = props;
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ export const Favorites = (props) => {
 
   return (
     <>
-    <div>
+    <div className={styles.optionFilters}>
       <select onChange={handleOrder}>
         <option value="A">Ascendente</option>
         <option value="D">Descendente</option>
@@ -49,6 +50,7 @@ export const Favorites = (props) => {
             status={myFavourites.status}
             
           />
+    
         ))}
       </div>
     </>

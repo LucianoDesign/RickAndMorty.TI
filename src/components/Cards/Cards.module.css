@@ -1,9 +1,22 @@
-.homeSearch{
+.cardsContainer {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    margin-right: 20%;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: center;
+}
+
+  
+
+.homeSearch{
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
     
+    justify-content: flex-end;
+    width: 90%;
+    
+    
+   
 }
 
 

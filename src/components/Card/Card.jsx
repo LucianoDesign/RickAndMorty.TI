@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { addFav, removeFav, removeAll } from "../../redux/actions";
 import { useState, useEffect } from "react";
 import {connect} from 'react-redux';
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 export  function Card(props) {
   const {
@@ -10,6 +11,7 @@ export  function Card(props) {
     name,
     status,
     species,
+    origin,
     gender,
     image,
     onClose,
@@ -48,9 +50,9 @@ export  function Card(props) {
       <div className={styles.divCardContent}>
         {/* <button onClick={onClose}>X</button> */}
         {isFav ? (
-          <button onClick={handleFavorite}>❤️</button>
+          <button onClick={handleFavorite}><FaHeart color="red" size="24px"/></button>
         ) : (
-          <button onClick={handleFavorite}>🤍</button>
+          <button onClick={handleFavorite}><FaRegHeart color="black" size="24px"/></button>
         )}
         <div onClick={() => handleClose(id)} className={styles.containerSpin}>
           <div className={styles.closeIconSpin}></div>
@@ -61,7 +63,7 @@ export  function Card(props) {
         <h2>{status}</h2>
         <h2>{species}</h2>
         <h2>{gender}</h2>
-        {/* origin */}
+        <h2>{origin}</h2>
         <img src={image} alt={name} />
       </div>
     </div>

@@ -25,7 +25,7 @@ export default function SearchBar(props) {
       />
       <label  className={styles.formLabel}>Search ID</label>
       <button onClick={handleClick} className={styles.glowOnHover}>
-        Agregar
+        Add
       </button>
     </div>
   );

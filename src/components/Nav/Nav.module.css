@@ -1,12 +1,65 @@
-.NavContent{
+.navContent{
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    background-color: #20ad6e;
-    margin-bottom: 2em;
+    background-color: #0fb19b;
+    width: 100%;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.5em;
+    
+    
+    
+
+}
+.navHome{
+    display: flex;
 }
 
-.glowOnHover {
+.navImage {
+    margin-left: 40px;
+    margin-right: 40px;
+    width: 10em;
+    position: relative;
+    min-width: 200px;
+  }
+  
+  .navImage::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    z-index: 200;
+    background-color: #d31717;
+    filter: blur(10px);
+    opacity: 0.8;
+  }
+.navLinks > a{
+    text-decoration: none;
+    color: black;
+    margin-right: 40px;
+}
+.navLinks{
+    
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+.powerOffIcon {
+    margin-right: 40px;
+    margin-left: 40px;
+    width: 2em;
+}
+.powerOffIcon:hover {
+    cursor: pointer;
+}
+
+/* .glowOnHover {
     margin: 15px 0 15px 0;
     width: 220px;
     height: 50px;
@@ -65,4 +118,4 @@
     0% { background-position: 0 0; }
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
-}
+} */
