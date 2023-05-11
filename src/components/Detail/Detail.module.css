@@ -1,7 +1,47 @@
 .detailContent {
+    margin-top: 250px;
+    font-family: 'Share Tech Mono', monospace;
     display: flex;
-    flex-direction: column;
-    width: 500px;
+    
+    width: 100%;
+    
+    justify-content: space-evenly;
    
 }
+.detailImg img{
+    width: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+    
+    
+}
 
+.detailData {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-content: center;
+    justify-content:space-evenly;
+    background-color: rgba(110, 107, 107, 0.605);
+    border-radius: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+
+.detailData h2{
+    background-color: transparent;
+    border: none;
+    font-size: 2em;
+}
+
+.detailData li{
+    width: 90%;
+    color: white;
+    text-align:justify ;
+    font-size: 1.2em;
+    padding: 10px;
+    
+    
+    
+}
