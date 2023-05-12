@@ -1,7 +1,7 @@
 const PathRoutes = {
     HOME: '/home',
     ABOUT: '/about',
-    DETAIL: '/home/detail/:id',
+    DETAIL: '/:section/detail/:id' ,
     FAVORITES: '/favorites'
 }
 

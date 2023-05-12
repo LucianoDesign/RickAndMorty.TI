@@ -1,10 +1,7 @@
 import "./App.css";
 import "../src/helpers/Routes.helper";
-import { useState } from "react";
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-
-import {Routes, Route, useLocation} from "react-router-dom";
+import { useState , useEffect} from "react";
+import {Routes, Route, useLocation, useNavigate} from "react-router-dom";
 import axios from "axios";
 import PathRoutes from "../src/helpers/Routes.helper";
 /*Components */

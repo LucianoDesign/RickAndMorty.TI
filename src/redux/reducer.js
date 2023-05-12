@@ -18,11 +18,11 @@ const rootReducer = (state = initialState, action) => {
             return {...state,
                 allCharacters: state.allCharacters.filter((char) => char.id !== Number(action.payload))}
         case FILTER:
-            const filterCopy = [...state.allCharacters];
-            const filter = filterCopy.filter((char) => char.gender === action.payload)
+            const filterCopy = state.allCharacters.filter((char) => char.gender === action.payload);
+            
             return {
                 ...state,
-                myFavourites: filter,
+                myFavourites: filterCopy,
             }
         case ORDER:
             const orderCopy = [...state.myFavourites];

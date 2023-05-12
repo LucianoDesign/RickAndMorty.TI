@@ -1,17 +1,40 @@
 .divCardContainer {
   display: flex;
-  background-image: url("/src/imgs/HD-wallpaper-portal-morty-rick.jpg");
-  background-position: center;
-  background-size: cover;
-  border: 1px solid #cccccc;
-  border-radius: 20px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 7%;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1), 0px 0px 13px 5px rgba(0, 255, 0, 0.5);
   padding: 20px;
   max-width: 250px;
   margin: 20px;
   position: relative;
+  overflow: hidden;
+  font-family: 'Share Tech Mono', monospace;
 }
 
+.backgroundImage {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: url("/src/imgs/Portal.png");
+  background-position: center;
+  background-size: cover;
+  animation-name: rotateBackground;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  z-index: -5;
+
+}
+
+@keyframes rotateBackground {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 .divCardContent {
   display: flex;
@@ -23,15 +46,14 @@
   cursor: pointer;
   transition: color 0.3s;
   position: absolute;
-  top: 49%;
-  right: 9%;
+  bottom: 25%;
+  right: 4%;
 }
 .link {
   color: black;
   background-color: rgba(19, 196, 116, 0.5);
   border-radius: 20px;
   text-decoration: none;
-  position: absolute;
   bottom: 50%;
 }
 .link:hover{
@@ -51,18 +73,19 @@ h2 {
   text-align: center;
 }
 
-img {
-    margin-bottom: 5px;
+.divCardContent img {
+  margin-bottom: 10px;
   max-width: 100%;
-  border-radius: 20px;
+  border-radius: 30%;
   order: -1;
+  border: 7px outset #3fdc596a;
 }
 
 
 
 .divCardContent div {
-  top: 2%;
-  right: 2%;
+  top: 5%;
+  right: 7%;
   position: absolute;
   
 }
@@ -89,7 +112,7 @@ img {
   border: 0.1em solid;
   border-color: rgba(15, 192, 59, 0.8);
   border-radius: 6em;
-  /*background: rgba(255,255,255,0.8);*/
+  background: rgba(255,255,255,0.8);
 }
 .containerSpin div:after {
   transition: all 0.075s ease-in-out;
