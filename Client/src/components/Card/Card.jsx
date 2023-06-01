@@ -44,6 +44,7 @@ export  function Card(props) {
   const handleClose = (id) => {
     onClose(id);
     removeFav(id);
+    
   };
   return (
     <div className={styles.divCardContainer}>

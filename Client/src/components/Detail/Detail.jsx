@@ -7,12 +7,12 @@ export default function Detail() {
   const { id } = useParams();
   const [character, setCharacter] = useState({});
 
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios(`https://rickandmortyapi.com/api/character/${id}`)
+    axios(`http://localhost:3001/rickandmorty/character/${id}`)    
       .then(({ data }) => {
-        if (data.name) {
+        console.log(data)
+        if (data) {
           setCharacter(data);
         } else {
           window.alert("No hay personajes con ese ID");
@@ -22,18 +22,11 @@ export default function Detail() {
         console.log(error);
         setCharacter(null);
       })
-      .finally(() => {
-        setLoading(false);
-      });
+      
   }, [id]);
 
-  if (loading) {
-    return <div>Cargando...</div>;
-  }
-
-  if (!character) {
-    return <div>Error: No se pudo cargar el personaje</div>;
-  }
+  
+  
   const gender =
     character.gender === "Male"
       ? "His"
@@ -47,7 +40,7 @@ export default function Detail() {
       ? "She"
       : "It";
 
-  return (
+  return   (
     <div className={styles.detailContent}>
       <div className = {styles.detailImg}>
         <img src={character.image} alt={character.name} />
@@ -59,19 +52,19 @@ export default function Detail() {
             {gender} id number is {character.id}
           </li>
           <li>
-            {pronoun} is from {character.origin.name} and{" "}
-            {gender.toLowerCase()} current location is at{" "}
-            {character.location.name}.
+            {pronoun} is from {character.origin} and{" "}
+            {character.origin && gender.toLowerCase()} current location is at{" "}
+            {character.location}.
           </li>
           <li>
-            {pronoun} is {character.status.toLowerCase()}{" "}
+            {pronoun} is { character.status && character.status.toLowerCase()}{" "}
             {character.status === "Alive" ? "and a" : "and was"}{" "}
-            {character.species.toLowerCase()}.
+            {character.species && character.species.toLowerCase()}.
           </li>
-          <li>
+          {/* <li>
             {pronoun} shows up in {character.episode.length}{" "}
             {character.episode.length > 1 ? "episodes" : "episode"}.
-          </li>
+          </li> */}
         </ul>
       </div>
     </div>

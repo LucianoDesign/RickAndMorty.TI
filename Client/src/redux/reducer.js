@@ -13,10 +13,10 @@ const rootReducer = (state = initialState, action) => {
                 allCharacters: [...state.allCharacters, action.payload]};
         case REMOVE_FAV:
             return {...state,
-                 myFavourites: state.myFavourites.filter((char) => char.id !== Number(action.payload))};
+                 myFavourites: state.myFavourites.filter((char) => char.id !== action.payload)};
         case REMOVE_ALL:
             return {...state,
-                allCharacters: state.allCharacters.filter((char) => char.id !== Number(action.payload))}
+                allCharacters: state.allCharacters.filter((char) => char.id !== action.payload)}
         case FILTER:
             const filterCopy = state.allCharacters.filter((char) => char.gender === action.payload);
             

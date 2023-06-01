@@ -38,30 +38,34 @@ function App() {
  }, [access, navigate]);
 /*Fin de Acceso al home*/ 
   const onSearch = (id) => {
-    const parsedId = parseInt(id);
-    if (characters.find((char) => char.id === parsedId)) {
+    if (characters.find((char) => char.id === id)) {
       window.alert("Este personaje ya está en la lista");
       return;
     }
-    axios(`https://rickandmortyapi.com/api/character/${id}`).then(
-      ({ data }) => {
-        if (data.name) {
-          setCharacters((oldChars) => [...oldChars, data]);
-        } else {
-          window.alert("¡No hay personajes con este ID!");
-        }
-        
-      }
-    );
+    axios(`http://localhost:3001/rickandmorty/character/${id}`)
+  .then(({ data }) => {
     
+      setCharacters((oldChars) => [...oldChars, data]);
+      
+  })
+  .catch((error) => {
+    console.log(error);
+    window.alert("¡No hay personajes con este ID!");
+  });
+      
   };
   const onClose = (id) => {
-    const parsedId = parseInt(id);
+    /* const parsedId = parseInt(id); */
+    console.log(id)
     const filteredCharacters = characters.filter(
-      (character) => character.id !== parsedId
+      (character) => character.id !== id
     );
     setCharacters(filteredCharacters);
   };
+
+  useEffect(() => {
+    console.log("Characters:", characters);
+  }, [characters]);
 
   return (
 
