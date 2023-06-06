@@ -17,18 +17,18 @@ export  function Card(props) {
     onClose,
     addFav,
     removeFav,
-    myFavourites
+    myFavorites
   } = props;
 
   const [isFav, setIsFav] = useState(false);
 
   useEffect(() => {
-    myFavourites.forEach((fav) => {
+    myFavorites.forEach((fav) => {
        if (fav.id === id) {
           setIsFav(true);
        }
     });
- }, [myFavourites, id]);
+ }, [myFavorites, id]);
 
 
   const handleFavorite = () => {
@@ -74,7 +74,7 @@ export  function Card(props) {
 
 export function mapStateToProps(state) {
   return {
-    myFavourites: state.myFavourites
+    myFavorites: state.myFavorites
   }
 }
 

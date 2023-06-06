@@ -6,7 +6,7 @@ import { filterCards, orderCards } from "../../redux/actions";
 
 
 export const Favorites = (props) => {
-  const { myFavourites } = props;
+  const { myFavorites } = props;
   const dispatch = useDispatch();
   const [aux, setAux] = React.useState(false);
   
@@ -35,19 +35,20 @@ export const Favorites = (props) => {
     </div>      
       <div className={styles.favoriteDiv}>
       
-        {myFavourites?.map((myFavourites) => (
+        {myFavorites?.map((myFavorites) => (
           <Card
           
-            key={myFavourites.id}
-            name={myFavourites.name}
-            id={myFavourites.id}
-            species={myFavourites.species}
-            gender={myFavourites.gender}
-            image={myFavourites.image}
-            onClose={myFavourites.onClose}
-            addFav={myFavourites.addFav}
-            removeFav={myFavourites.removeFav}
-            status={myFavourites.status}
+            key={myFavorites.id}
+            name={myFavorites.name}
+            id={myFavorites.id}
+            species={myFavorites.species}
+            gender={myFavorites.gender}
+            image={myFavorites.image}
+            onClose={myFavorites.onClose}
+            addFav={myFavorites.addFav}
+            removeFav={myFavorites.removeFav}
+            handleClose={myFavorites.handleClose}
+            status={myFavorites.status}
             
           />
     
@@ -59,7 +60,7 @@ export const Favorites = (props) => {
 
 export function mapStateToProps(state) {
   return {
-    myFavourites: state.myFavourites,
+    myFavorites: state.myFavorites,
   };
 }
 

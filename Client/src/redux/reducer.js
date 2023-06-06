@@ -1,19 +1,16 @@
 import {ADD_FAV ,REMOVE_FAV, ORDER, FILTER, REMOVE_ALL} from "./actions"
 
 const initialState = {
-    myFavourites: [] ,
+    myFavorites: [] ,
     allCharacters: [],
 }
 
 const rootReducer = (state = initialState, action) => {
     switch(action.type){
         case ADD_FAV:
-            return {...state, 
-                myFavourites:[...state.myFavourites, action.payload],
-                allCharacters: [...state.allCharacters, action.payload]};
+            return { ...state, myFavorites: action.payload, allCharacters: action.payload };
         case REMOVE_FAV:
-            return {...state,
-                 myFavourites: state.myFavourites.filter((char) => char.id !== action.payload)};
+            return { ...state, myFavorites: action.payload };
         case REMOVE_ALL:
             return {...state,
                 allCharacters: state.allCharacters.filter((char) => char.id !== action.payload)}
@@ -22,10 +19,10 @@ const rootReducer = (state = initialState, action) => {
             
             return {
                 ...state,
-                myFavourites: filterCopy,
+                myFavorites: filterCopy,
             }
         case ORDER:
-            const orderCopy = [...state.myFavourites];
+            const orderCopy = [...state.myFavorites];
 
             const order = orderCopy.sort((a,b)=>{
                 if (action.payload === 'A'){
@@ -39,7 +36,7 @@ const rootReducer = (state = initialState, action) => {
 
             return {
                 ...state,
-                myFavourites: order
+                myFavorites: order
             }
         
         default:
