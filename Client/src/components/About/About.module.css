@@ -1,4 +1,23 @@
 .AboutContent {
-    width: 200px;
-    background-color: red;
+    margin-top: 250px;
+    font-family: 'Share Tech Mono', monospace;
+    display: flex;
+    
+    width: 100%;
+    
+    justify-content: space-evenly;
+}
+
+
+.AboutData {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    align-content: center;
+    justify-content: center;
+    background-color: rgba(110, 107, 107, 0.605);
+    border-radius: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+
 }

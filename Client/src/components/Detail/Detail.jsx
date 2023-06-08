@@ -61,10 +61,10 @@ export default function Detail() {
             {character.status === "Alive" ? "and a" : "and was"}{" "}
             {character.species && character.species.toLowerCase()}.
           </li>
-          {/* <li>
-            {pronoun} shows up in {character.episode.length}{" "}
-            {character.episode.length > 1 ? "episodes" : "episode"}.
-          </li> */}
+          <li>
+            {pronoun} shows up in {character.episodes}{" "}
+            {character.episodes > 1 ? "episodes" : "episode"}.
+          </li>
         </ul>
       </div>
     </div>

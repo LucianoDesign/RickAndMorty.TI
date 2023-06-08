@@ -20,7 +20,7 @@ export const Favorites = (props) => {
 
 
   return (
-    <>
+    <div className={styles.mainContainer}>
     <div className={styles.optionFilters}>
       <select onChange={handleOrder}>
         <option value="A">Ascendente</option>
@@ -38,23 +38,23 @@ export const Favorites = (props) => {
         {myFavorites?.map((myFavorites) => (
           <Card
           
-            key={myFavorites.id}
-            name={myFavorites.name}
-            id={myFavorites.id}
-            species={myFavorites.species}
-            gender={myFavorites.gender}
-            image={myFavorites.image}
-            onClose={myFavorites.onClose}
-            addFav={myFavorites.addFav}
-            removeFav={myFavorites.removeFav}
-            handleClose={myFavorites.handleClose}
-            status={myFavorites.status}
+          key={myFavorites.id}
+          name={myFavorites.name}
+          id={myFavorites.id}
+          species={myFavorites.species}
+          gender={myFavorites.gender}
+          image={myFavorites.image}
+          addFav={props.addFav} // Pasa addFav desde props
+          removeFav={props.removeFav} // Pasa removeFav desde props
+          handleClose={props.handleClose} // Pasa handleClose desde props
+          status={myFavorites.status}
+          onClose={props.onClose}
             
           />
     
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

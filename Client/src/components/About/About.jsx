@@ -4,7 +4,10 @@ export default function About(){
 
     return(
         <div className={styles.AboutContent}>
-            <h1>Hola Simulando un componente About</h1>
+            <div className={styles.AboutData}> 
+
+            <h1>Proyecto de integracion de HENRY</h1>
+            </div>
         </div>
     )
 }

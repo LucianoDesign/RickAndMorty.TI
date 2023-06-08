@@ -39,7 +39,8 @@ function App() {
  }, [access, navigate]);
 /*Fin de Acceso al home*/ 
   const onSearch = async (id) => {
-    if (characters.find((char) => char.id === id)) {
+    console.log(characters)
+    if (characters.find((char) => char.id === Number(id))) {
       window.alert("Este personaje ya está en la lista");
       return;
     }
@@ -54,17 +55,13 @@ function App() {
       
   };
   const onClose = (id) => {
-    /* const parsedId = parseInt(id); */
-    console.log(id)
     const filteredCharacters = characters.filter(
       (character) => character.id !== id
     );
     setCharacters(filteredCharacters);
   };
 
-  /* useEffect(() => {
-    console.log("Characters:", characters);
-  }, [characters]); */
+  
 
   return (
 

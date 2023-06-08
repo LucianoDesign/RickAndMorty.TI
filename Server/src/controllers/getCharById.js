@@ -16,6 +16,9 @@ const getCharById = async (req, res) => {
         origin: data.origin.name,
         image: data.image,
         status: data.status,
+        location: data.location.name,
+        episodes: data.episode.length
+        
       };
 
       character.name ? res.status(200).json(character) : res.status(200).send("Not Found");

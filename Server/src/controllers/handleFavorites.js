@@ -11,7 +11,7 @@ const deleteFav = (req, res) =>{
     const id = Number(req.params.id);
     myFavorites = myFavorites.filter(char => char.id !== id);
     res.status(200).json(myFavorites);
-    console.log(id)
+    
 }
 
 module.exports = {postFav, deleteFav};

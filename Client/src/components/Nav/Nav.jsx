@@ -1,11 +1,12 @@
 import styles from "./Nav.module.css";
 /* import { useState } from "react"; */
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ReactComponent as PowerOffIcon } from "../../assets/powerOff.svg";
 import RickMortyLogo from "../../assets/RickMorty.png";
 
 export default function Nav(props) {
   const { logout } = props;
+  const location = useLocation();
 
   /* const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false); */
@@ -18,9 +19,15 @@ export default function Nav(props) {
         </Link>
       </div>
       <div className={styles.navLinks}>
-        <Link to={"/home"}>Home</Link>
-        <Link to={"/about"}>About</Link>
-        <Link to={"/favorites"}>Favorites</Link>
+        <Link to={"/home"} className={
+            location.pathname === "/home" ? styles.activeLink : ""
+          }>Home</Link>
+        <Link to={"/about"} className={
+            location.pathname === "/about" ? styles.activeLink : ""
+          }>About</Link>
+        <Link to={"/favorites"}  className={
+            location.pathname === "/favorites" ? styles.activeLink : ""
+          }>Favorites</Link>
 
         <PowerOffIcon
           className={styles.powerOffIcon}
