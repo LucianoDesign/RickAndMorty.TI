@@ -1,6 +1,6 @@
 .navContent{
     display: flex;
-    background-color: #0fb19b;
+    background-color: #0fb19ba0;
     width: 100%;
     z-index: 2;
     position: fixed;

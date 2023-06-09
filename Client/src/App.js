@@ -11,6 +11,8 @@ import About from "./components/About/About";
 import Detail from "./components/Detail/Detail";
 import Form from "./components/Form/Form";
 import Favorites from "./components/Favorites/Favorites";
+import ParticleBackground from "./components/ParticleBackground/ParticleBackground";
+
 
 
 function App() {
@@ -66,7 +68,7 @@ function App() {
   return (
 
     <div className="App">
-
+      <ParticleBackground />
       {!isForm && <Nav logout = {logout}/>}
       <Routes>
       <Route path="/" element={<Form login = {login}/>}/>

@@ -1,22 +1,19 @@
+
 .cardsContainer {
     display: flex;
     flex-wrap: wrap;
     align-content: space-between;
     justify-content: center;
+    
 }
 
   
 
 .homeSearch{
-    margin-top: 100px;
+    margin-top: 10px;
     display: flex;
-    flex-wrap: wrap;
-    
-    justify-content: flex-end;
-    width: 90%;
-    
-    
-   
+    justify-content: center;
+    width: 100%;
 }
 
 
