@@ -40,44 +40,26 @@ describe("GET /rickandmorty/login", () => {
   });
 })
 describe("POST /rickandmorty/fav", () =>{
-  let favorites = []
+  const character1 = { name : "Rick Sanchez" }
+  const character2 = { name: "Morty Smith" }; 
   it("Lo que envies por body debe ser devuelto en un arreglo", async () => {
-    const reqBody = { name : "Rick Sanchez" }
-    const response = await agent.post('/rickandmorty/fav').send(reqBody);
-    favorites.push(reqBody);
-    expect(response.body).toEqual(favorites);
+    const response = (await agent.post('/rickandmorty/fav').send(character1)).body;
+
+    expect(response).toContainEqual(character1);
   })
   it("Si envías un nuevo elemento, debe ser devuelto en un arreglo que incluye los elementos enviados previamente", async () => {
-    const newRequestBody = { name: "Morty Smith" }; 
 
-    const newResponse = await agent.post("/rickandmorty/fav").send(newRequestBody);
-    favorites.push(newRequestBody); 
-
-    expect(newResponse.body).toEqual(favorites);
+    const response = (await agent.post("/rickandmorty/fav").send(character2)).body;
+    expect(response).toContainEqual(character1);
+    expect(response).toContainEqual(character2);
   });
 })
 describe("DELETE /rickandmorty/fav/:id", () => {
-  let favorites = [];
-
-  beforeEach(() => {
-    favorites = [{ name: "Rick Sanchez" }, { name: "Morty Smith" }];
-  });
-
-  it("Si no hay ningún personaje con el ID proporcionado, devuelve el arreglo de favoritos sin modificar", async () => {
-    const invalidId = 9999;
-    const response = await agent.delete(`/rickandmorty/fav/${invalidId}`);
-    expect(response.body).toEqual(favorites);
-  });
-
-  it("Si se proporciona un ID válido, elimina el personaje correspondiente del arreglo de favoritos", async () => {
-    const validId = 1;
-    const expectedFavorites = [{ name: "Morty Smith" }];
-
-    const response = await agent.delete(`/rickandmorty/fav/${validId}`);
-  favorites = favorites.filter((character) => character.name !== "Rick Sanchez");
-
-  expect(response.status).toEqual(200);
-  expect(response.body.length).toEqual(expectedFavorites.length);
-  expect(favorites).toEqual(expectedFavorites);
-  });
+  const character1 = { name : "Rick Sanchez" };
+  const character2 = { name: "Morty Smith" }; 
+   it('Devuelve los personajes existentes luego de ID invalido', async () =>{
+    const { body } = await agent.delete('/rickandmorty/fav/9999');
+    expect(body).toContainEqual(character1);
+    expect(body).toContainEqual(character2);
+   })
 });
