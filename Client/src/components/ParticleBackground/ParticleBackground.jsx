@@ -34,7 +34,7 @@ const ParticleBackground = () => {
           this.size = this.random(1, 5);
           this.x = this.random(0, width);
           this.y = this.random(0, height);
-          this.velocity = this.size * .5;
+          this.velocity = this.size * .3;
           this.changed = null;
           this.changedFrame = 0;
           this.maxChangedFrames = 50;
