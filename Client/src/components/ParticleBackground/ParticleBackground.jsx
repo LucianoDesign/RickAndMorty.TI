@@ -5,7 +5,7 @@ const ParticleBackground = () => {
     useEffect(() => {
       // Aquí pega el código JavaScript proporcionado
       const { random, atan2, cos, sin, hypot } = Math;
-  const max = 200;
+  const max = 100;
   const canvas = document.createElement("canvas");
   const $ = canvas.getContext('2d');
   const body = document.body;
@@ -29,12 +29,12 @@ const ParticleBackground = () => {
   
   Particle.prototype = {
       init(){
-          this.hue = this.random(150, 240);
+          this.hue = this.random(150, 310);
           this.alpha = 0;
           this.size = this.random(1, 5);
           this.x = this.random(0, width);
           this.y = this.random(0, height);
-          this.velocity = this.size * .3;
+          this.velocity = this.size * .1;
           this.changed = null;
           this.changedFrame = 0;
           this.maxChangedFrames = 50;

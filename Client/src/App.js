@@ -41,7 +41,7 @@ function App() {
  }, [access, navigate]);
 /*Fin de Acceso al home*/ 
   const onSearch = async (id) => {
-    console.log(characters)
+    
     if (characters.find((char) => char.id === Number(id))) {
       window.alert("Este personaje ya está en la lista");
       return;
@@ -51,7 +51,7 @@ function App() {
       setCharacters((oldChars) => [...oldChars, data]);
       
     } catch (error) {
-      console.log(error.message);
+      
       window.alert("¡No hay personajes con este ID!");
     }
       

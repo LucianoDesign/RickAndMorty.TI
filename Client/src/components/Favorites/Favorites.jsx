@@ -44,6 +44,7 @@ export const Favorites = (props) => {
           species={myFavorites.species}
           gender={myFavorites.gender}
           image={myFavorites.image}
+          origin={myFavorites.origin}
           addFav={props.addFav} // Pasa addFav desde props
           removeFav={props.removeFav} // Pasa removeFav desde props
           handleClose={props.handleClose} // Pasa handleClose desde props
